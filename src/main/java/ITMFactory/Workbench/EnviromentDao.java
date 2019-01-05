@@ -13,4 +13,8 @@ public interface EnviromentDao extends JpaRepository<Enviroment,Integer> {
 
     @Query(value = "select * from enviroment where sessionid =(select sessionid from worksession order by sessionid desc limit 1)",nativeQuery = true)
     List<Enviroment> GetlastEnviromentStatus();
+
+    @Query(value = "select sensor_value from enviroment where sensor_name like %?1 order by sessionid desc limit 1",nativeQuery = true)
+    Float GetSensorValueNow(String SensorName);
 }
+

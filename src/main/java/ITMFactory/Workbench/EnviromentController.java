@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @RestController
@@ -36,5 +37,12 @@ public class EnviromentController {
     @RequestMapping(params = "last", method = RequestMethod.GET, produces = "application/json")
     public List<Enviroment> GetEnviromentBySessionID() {
         return E.GetlastEnviromentStatus();
+    }
+
+    //To be used for turtle file.. it returns the current sensor value
+    //http://localhost:8080/api/itm/enviroment?sensorname={hum/temp/lum}
+    @RequestMapping(params = "sensorname", method = RequestMethod.GET, produces = "application/json")
+    public Float GetSensorValueNoww(@RequestParam("sensorname") String sensorname) {
+        return E.GetSensorValueNow(sensorname);
     }
 }

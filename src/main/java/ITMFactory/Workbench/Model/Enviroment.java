@@ -1,5 +1,8 @@
 package ITMFactory.Workbench.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -37,6 +40,7 @@ public class Enviroment {
         this.worksession = worksession;
     }
 
+    @JsonIgnore
     public int getid(){
         return id;
     }
@@ -77,13 +81,8 @@ public class Enviroment {
     public void setDate(String Date){
         this.Date = Date;
     }
-/*
-    public Worksession getWorksession(){
-        return worksession;
-    }
 
-    public void setWorksession(Worksession worksession){
-        this.worksession = worksession;
+    public long getWorksession(){
+        return worksession.getSessionID();
     }
-*/
 }
