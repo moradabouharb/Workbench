@@ -1,16 +1,15 @@
 package ITMFactory.Workbench;
 import ITMFactory.Workbench.Model.Worker;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/itm/worker")
+@CrossOrigin
 public class WorkerController {
 
 
@@ -35,7 +34,6 @@ public class WorkerController {
         String Qsql = "SELECT c FROM Worker c WHERE LOWER(c.Worker_name) =:name";
         return em.createQuery(Qsql, Worker.class).setParameter("name", Worker_Name).getResultList();
     }
-
 
     // get worker information by his RFID
     //http://localhost:8080/api/itm/worker?rfid=aaa
