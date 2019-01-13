@@ -19,4 +19,10 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
             "order by product_count desc limit 1",nativeQuery = true)
     List<Product> GetProductProducedbyWorker(String name);
 
+    @Query(value = "Select product_count from product " +
+            "inner join worksession on product.product_sessionID = worksession.sessionid " +
+            "inner join worker on worker.rfid = worksession.rfid where Worker_name like %?1 " +
+            "order by product_count desc limit 1",nativeQuery = true)
+    int GetProductProducedbyWorkerr(String name);
+
 }

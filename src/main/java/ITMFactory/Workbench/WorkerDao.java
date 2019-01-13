@@ -14,4 +14,7 @@ public interface WorkerDao extends JpaRepository<Worker,String> {
 
     @Query(value = "select c from Worker c where c.RFID like %?1")
     List<Worker> GetWorkerByRFID(String name);
+
+    //@Query(value = "select c.RFID from Worker c where c.workerName like %?1")
+    //String GetRFIDbyworkername(String Workername);
 }

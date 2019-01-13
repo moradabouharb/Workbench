@@ -25,7 +25,7 @@ public class ProductController {
     }
 
     //Get product produced by worker
-    //http://localhost:8080/api/itm/product?workername=morad
+        //http://localhost:8080/api/itm/product?workername=morad
     @RequestMapping(params = "workername",method = RequestMethod.GET, produces = "application/json")
     public List<Product> GetProductQuantitybyWorkerName(@RequestParam("workername") String workername){
         return p.GetProductProducedbyWorker(workername);

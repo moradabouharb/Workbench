@@ -41,4 +41,14 @@ public class WorkerController {
     public List<Worker> GetWorkerByRFID(@RequestParam("rfid") String Worker_rfid) {
         return W.GetWorkerByRFID(Worker_rfid);
     }
+
+    /*
+    @PostMapping("addworker")
+    public ResponseEntity<Object> Sendvalues(@RequestBody worker s){
+        Sensor saveValue = w.save(s);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(saveValue.getId()).toUri();
+        return ResponseEntity.created(location).build();
+}
+     */
 }
