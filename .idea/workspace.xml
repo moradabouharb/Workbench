@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd37349-53d4-45b9-ac2a-09bbd8d4a245" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/ITMFactory/Workbench/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ITMFactory/Workbench/ProductDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/WorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/WorkerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/WorkerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/WorkerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/ITMFactory/Workbench/rdf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/ITMFactory/Workbench/rdf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/rdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/rdf.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -47,15 +43,15 @@
     <session id="1958201725">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.168" value="1" />
           <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.69" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -80,7 +76,7 @@
         <counts>
           <entry key="gradle" value="42" />
           <entry key="html" value="11" />
-          <entry key="java" value="2428" />
+          <entry key="java" value="2495" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
@@ -88,7 +84,7 @@
         <counts>
           <entry key="Groovy" value="42" />
           <entry key="HTML" value="11" />
-          <entry key="JAVA" value="2428" />
+          <entry key="JAVA" value="2495" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -108,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/rdf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+            <state relative-caret-position="190">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -669,6 +665,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -722,7 +719,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -734,8 +730,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547385023809" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cps2/M2/Semantic web/SNCF/SNCF" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547921782866" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -778,16 +774,20 @@
       <workItem from="1547147261990" duration="234000" />
       <workItem from="1547216074760" duration="28147000" />
       <workItem from="1547400504061" duration="732000" />
+      <workItem from="1547818012619" duration="303000" />
+      <workItem from="1547920200414" duration="1544000" />
+      <workItem from="1547987188359" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48664000" />
+    <option name="totallyTimeSpent" value="51110000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -797,7 +797,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35337242" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18914956" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -970,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ITMFactory/Workbench/rdf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        <state relative-caret-position="190">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

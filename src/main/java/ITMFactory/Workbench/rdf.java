@@ -30,6 +30,7 @@ public class rdf {
         final String dbo = "http://dbpedia.org/ontology/";
         final String wiki = "https://www.wikidata.org/wiki/";
         final String owl = "http://www.w3.org/2002/07/owl#";
+        final String xsd = org.apache.jena.vocabulary.XSD.getURI();
 
         Model model = ModelFactory.createDefaultModel();
         model.setNsPrefix("sosa",sosa);
@@ -39,6 +40,7 @@ public class rdf {
         model.setNsPrefix("rdf", RDF.getURI());
         model.setNsPrefix("foaf", FOAF.getURI());
         model.setNsPrefix("owl",owl);
+        model.setNsPrefix("xsd", xsd);
 
         Resource r = model.createProperty(sosa,"Sensor");
         Property observes = model.createProperty(sosa, "observes");
@@ -58,11 +60,14 @@ public class rdf {
         Property thing = model.createProperty(owl,"thing");
 
 
-        Literal Humidityvalue = model.createTypedLiteral(Ed.GetSensorValueNow("hum"), XSD.xfloat.getURI());
-        Literal Tempvalue = model.createTypedLiteral(Ed.GetSensorValueNow("temp"),
-                "http://w3id.org/lindt/custom_datatypes#Temperature");
+        Literal Humidityvalue = model.createTypedLiteral(Ed.GetSensorValueNow("hum"),XSD.decimal.getURI());
+        //Literal Tempvalue = model.createTypedLiteral(Ed.GetSensorValueNow("temp"),
+                //"http://w3id.org/lindt/custom_datatypes#Temperature");
+
+        Literal Tempvalue = model.createTypedLiteral(Ed.GetSensorValueNow("temp"),XSD.decimal.getURI());
+
         Literal lumvalue = model.createTypedLiteral(Ed.GetSensorValueNow("lum"),
-                "http://w3id.org/lindt/custom_datatypes#illuminance");
+                XSD.decimal.getURI());
         Literal abstracttemp = model.createTypedLiteral("A temperature is an objective comparative measure of hot or cold"
         ,XSD.xstring.getURI());
         Literal literalnameofworker = model.createTypedLiteral("alex",XSD.xstring.getURI());
