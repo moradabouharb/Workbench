@@ -21,10 +21,21 @@ public class rdf {
     @Autowired
     ProductDao Pd;
 
-    @GetMapping(value = "/turtle", produces = {"text/plain"})
+    @GetMapping(value = "/turtle_plain", produces = {"text/plain"})
     public @ResponseBody
     String rdf(){
         Writer out = new StringWriter();
+        GenerateRDF().write(out,"turtle");
+        return out.toString();
+    }
+
+    @GetMapping(value = "turtle", produces = {"text/turtle"})
+    public @ResponseBody
+    String turtle(){
+        return GenerateRDF().toString();
+    }
+
+    private Model GenerateRDF(){
         final String sosa = "http://www.w3.org/ns/sosa/";
         final String db = "dbpedia.org/resource/";
         final String dbo = "http://dbpedia.org/ontology/";
@@ -61,7 +72,7 @@ public class rdf {
         Literal lumvalue = model.createTypedLiteral(Ed.GetSensorValueNow("lum"),
                 XSD.decimal.getURI());
         Literal abstracttemp = model.createTypedLiteral("A temperature is an objective comparative measure of hot or cold"
-        ,XSD.xstring.getURI());
+                ,XSD.xstring.getURI());
         Literal literalnameofworker = model.createTypedLiteral("alex",XSD.xstring.getURI());
         Literal literalofRFID = model.createTypedLiteral("8400071725",XSD.xstring.getURI());
         Literal literalQ = model.createTypedLiteral(Pd.GetProductProducedbyWorkerr("alex"),XSD.integer.getURI());
@@ -79,7 +90,6 @@ public class rdf {
         model.add(lum, rdfvalue, lumvalue);
         model.add(temp, abstractt, abstracttemp);
         model.add(product,rdftype,thing);
-        model.write(out,"turtle");
-        return out.toString();
+        return model;
     }
 }
