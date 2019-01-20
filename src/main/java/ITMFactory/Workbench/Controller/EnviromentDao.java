@@ -1,4 +1,4 @@
-package ITMFactory.Workbench;
+package ITMFactory.Workbench.Controller;
 
 import ITMFactory.Workbench.Model.Enviroment;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package ITMFactory.Workbench;
+package ITMFactory.Workbench.Controller;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.sparql.vocabulary.FOAF;
 import org.apache.jena.vocabulary.RDF;
@@ -31,7 +31,6 @@ public class rdf {
         final String wiki = "https://www.wikidata.org/wiki/";
         final String owl = "http://www.w3.org/2002/07/owl#";
         final String xsd = org.apache.jena.vocabulary.XSD.getURI();
-
         Model model = ModelFactory.createDefaultModel();
         model.setNsPrefix("sosa",sosa);
         model.setNsPrefix("db",db);
@@ -41,7 +40,6 @@ public class rdf {
         model.setNsPrefix("foaf", FOAF.getURI());
         model.setNsPrefix("owl",owl);
         model.setNsPrefix("xsd", xsd);
-
         Resource r = model.createProperty(sosa,"Sensor");
         Property observes = model.createProperty(sosa, "observes");
         Property hum = model.createProperty(db,"Humidity");
@@ -58,14 +56,8 @@ public class rdf {
         Property workername = model.createProperty(FOAF.getURI(),"name");
         Property person = model.createProperty(FOAF.getURI(),"Person");
         Property thing = model.createProperty(owl,"thing");
-
-
         Literal Humidityvalue = model.createTypedLiteral(Ed.GetSensorValueNow("hum"),XSD.decimal.getURI());
-        //Literal Tempvalue = model.createTypedLiteral(Ed.GetSensorValueNow("temp"),
-                //"http://w3id.org/lindt/custom_datatypes#Temperature");
-
         Literal Tempvalue = model.createTypedLiteral(Ed.GetSensorValueNow("temp"),XSD.decimal.getURI());
-
         Literal lumvalue = model.createTypedLiteral(Ed.GetSensorValueNow("lum"),
                 XSD.decimal.getURI());
         Literal abstracttemp = model.createTypedLiteral("A temperature is an objective comparative measure of hot or cold"
@@ -73,7 +65,6 @@ public class rdf {
         Literal literalnameofworker = model.createTypedLiteral("alex",XSD.xstring.getURI());
         Literal literalofRFID = model.createTypedLiteral("8400071725",XSD.xstring.getURI());
         Literal literalQ = model.createTypedLiteral(Pd.GetProductProducedbyWorkerr("alex"),XSD.integer.getURI());
-
         model.add(r, observes, hum);
         model.add(r, observes, temp);
         model.add(r, observes, lum);
@@ -88,7 +79,6 @@ public class rdf {
         model.add(lum, rdfvalue, lumvalue);
         model.add(temp, abstractt, abstracttemp);
         model.add(product,rdftype,thing);
-
         model.write(out,"turtle");
         return out.toString();
     }
