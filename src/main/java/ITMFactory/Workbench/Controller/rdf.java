@@ -37,7 +37,7 @@ public class rdf {
 
     private Model GenerateRDF(){
         final String sosa = "http://www.w3.org/ns/sosa/";
-        final String db = "dbpedia.org/resource/";
+        final String db = "http://dbpedia.org/resource/";
         final String dbo = "http://dbpedia.org/ontology/";
         final String wiki = "https://www.wikidata.org/wiki/";
         final String owl = "http://www.w3.org/2002/07/owl#";
@@ -53,13 +53,13 @@ public class rdf {
         model.setNsPrefix("xsd", xsd);
         Resource r = model.createProperty(sosa,"Sensor");
         Property observes = model.createProperty(sosa, "observes");
-        Property hum = model.createProperty(db,"Humidity");
-        Property temp = model.createProperty(db,"Temperature");
-        Property lum = model.createProperty(db,"Light");
+        Resource hum = model.createProperty(db,"Humidity");
+        Resource temp = model.createProperty(db,"Temperature");
+        Resource lum = model.createProperty(db,"Light");
         Property rfid = model.createProperty(db,"Radio-frequency_identification");
-        Property product = model.createProperty(wiki,"Q2424752");
+        Resource product = model.createProperty(wiki,"Q2424752");
         Property quantity = model.createProperty(db,"Quantity");
-        Property worker = model.createProperty(wiki,"Q327055");
+        Resource worker = model.createProperty(wiki,"Q327055");
         Property abstractt = model.createProperty(dbo,"abstract");
         Property produceBy = model.createProperty(dbo,"producedBy");
         Property rdfvalue = model.createProperty(RDF.getURI(), "value");
